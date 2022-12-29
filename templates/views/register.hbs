@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+    <img class="wave" src="css/wave.png" alt="">
+    <div class="container">
+        <div class="img">
+            <img src="css/sideimg.svg" alt="">
+        </div>
+        <div class="login-container">
+            <form action="/register" method="post">
+                <img class="avatar" src="css/avatar.svg" alt="">
+                <h2>Registration</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class='fas fa-user'></i>
+                    </div>
+                    <div>
+                        <h5>Name</h5>
+                        <input class="input" type="text" name="name">
+                    </div>
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class='fas fa-phone-alt'></i>
+                    </div>
+                    <div>
+                        <h5>Phone</h5>
+                        <input class="input" type="tel" name="phone">
+                    </div>
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class='fas fa-envelope'></i>
+                    </div>
+                    <div>
+                        <h5>Email</h5>
+                        <input class="input" type="email" name="email">
+                    </div>
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class='fas fa-unlock'></i>
+                    </div>
+                    <div>
+                        <h5>password</h5>
+                        <input class="input" type="password" name="password">
+                    </div>
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class='fas fa-lock'></i>
+                    </div>
+                    <div>
+                        <h5>Confirm password</h5>
+                        <input class="input" type="password" name="confirmpassword">
+                    </div>
+                </div>
+                <a href="/login">Log In ?</a>
+                <input type="submit" class="btn" value="Sign in">
+            </form>
+        </div>
+    </div>
+    <script>
+            const inputs = document.querySelectorAll('.input');
+
+            function focusFunc(){
+                let parent = this.parentNode.parentNode;
+                parent.classList.add('focus');
+            }
+
+            function blurFunc(){
+                let parent = this.parentNode.parentNode;
+                if(this.value == ""){
+                    parent.classList.remove('focus');
+                }
+            }
+
+            inputs.forEach(input =>{
+                input.addEventListener('focus',focusFunc);
+                input.addEventListener('blur',blurFunc);
+            });
+    </script>
+</body>
+</html>
